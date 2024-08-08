@@ -1,0 +1,23 @@
+.abouttable{
+    border: 1px solid black;
+    padding: 10px;
+}
+.abouttable button{
+ width: 70px;
+ padding: 5px;
+ margin: 5px;
+ cursor: pointer;
+ border: none;
+ border-radius: 5px;
+}
+.abouttable button:first-child{
+    background: green;
+}
+.abouttable button:last-child{
+    background: red;
+}
+
+.table_head{
+    /* min-width: 800px; */
+    overflow-x: scroll;
+}

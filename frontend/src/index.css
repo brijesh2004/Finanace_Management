@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Adjust this value based on your navbar height */
+    overflow: hidden; /* Prevent scrollbars */
+  }

@@ -1,0 +1,32 @@
+.form_main_div{
+    display: flex;
+    justify-content: center;
+}
+.form_submit{
+    margin-top: 180px;
+}
+.form_submit label{
+    display: block;
+    margin-top: 20px;
+}
+.form_submit input{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+}
+.form_submit button{
+    margin-top: 20px;
+    width: 150px;
+    height:35px;
+    background: rgb(0, 255, 55);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.selectItem{
+    width: 300px;
+    text-align: center;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
