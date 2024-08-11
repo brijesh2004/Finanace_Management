@@ -21,3 +21,13 @@
     /* min-width: 800px; */
     overflow-x: scroll;
 }
+.download_btn{
+    width: 150px;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(60, 60, 182);
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+}

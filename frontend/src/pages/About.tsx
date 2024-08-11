@@ -31,7 +31,6 @@ const About = () => {
     } catch (error) {
       console.error("Error fetching data", error);
       setDataFind(false);
-      
     }
   };
 
@@ -96,6 +95,31 @@ const About = () => {
   const incomeData = filteredUserData.filter((item: any) => item.incomeorexpanse === 'income');
   const expenseData = filteredUserData.filter((item: any) => item.incomeorexpanse === 'expanse');
 
+  // Function to convert data to CSV format
+  const downloadCSV = () => {
+    const headers = ['Name', 'Type', 'Updated Date', 'Amount'];
+    const rows = filteredUserData.map((user: any) => [
+      user.incomeorexpanse,
+      user.types,
+      formatDate(user.date),
+      user.amount
+    ]);
+
+    const csvContent = [
+      headers.join(','),
+      ...rows.map((row:any) => row.join(','))
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'user_data.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
    <div>
     { datafind===true?
@@ -138,6 +162,7 @@ const About = () => {
           <option value="expanse">Expense</option>
         </select>
       </div>
+      <button onClick={downloadCSV} className={style.download_btn}>Download CSV</button>
  <div className={style.table_head}>
       <table style={{ margin: "0 auto", borderCollapse: "collapse", width: "80%" }}>
         <thead>
