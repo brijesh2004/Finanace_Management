@@ -29,7 +29,7 @@ const ResetPassword = () => {
      e.preventDefault();
     try{
       const backend = import.meta.env.VITE_BACKEND;
-     const res = await axios.post(`${backend}/changepassword` , {email , password ,code} , {withCredentials:true});
+     await axios.post(`${backend}/changepassword` , {email , password ,code} , {withCredentials:true});
      
      alert("password reset successfull");
      navigate("/login");
