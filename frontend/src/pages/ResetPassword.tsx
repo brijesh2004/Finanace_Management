@@ -17,7 +17,7 @@ const ResetPassword = () => {
     e.preventDefault();
     try{
       const backend = import.meta.env.VITE_BACKEND;
-      const res = await axios.post(`${backend}/forgot` , {email} , {withCredentials:true});
+        await axios.post(`${backend}/forgot` , {email} , {withCredentials:true});
       alert("email send");
       setEmailSend(true);
     }
