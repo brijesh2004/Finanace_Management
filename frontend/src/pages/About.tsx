@@ -50,7 +50,7 @@ const About = () => {
   const deleteItem = async (exId: String) => {
     try {
       const backend = import.meta.env.VITE_BACKEND;
-      const res = await axios.post(`${backend}/delete`, { exId }, { withCredentials: true });
+      await axios.post(`${backend}/delete`, { exId }, { withCredentials: true });
       alert("Deleted");
       window.location.reload();
     } catch (err) {

@@ -13,7 +13,7 @@ const AddIncome = () => {
   const [inEx , setInEx] = useState(incomeSource);
   const [type , setType] = useState(types);
   const [amount , setAmount] = useState(amountValue);
-  const [exAddress , setExAddress] = useState(inexId);
+  const [exAddress] = useState(inexId);
   const logind = useSelector((state:any)=>state.login);
   const [pop , setPop] = useState({
     popUp:false,
@@ -27,7 +27,7 @@ const AddIncome = () => {
         return ;
       }
       const backend = import.meta.env.VITE_BACKEND;
-      const data = await axios.post(`${backend}/finance` , {
+      await axios.post(`${backend}/finance` , {
           inEx , type , amount , exAddress
       } , {withCredentials:true})
 
